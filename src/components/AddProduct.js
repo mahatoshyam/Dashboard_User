@@ -13,7 +13,7 @@ export default function AddProduct() {
     }
     console.log(name, price, category, company);
     const userId = JSON.parse(localStorage.getItem("userdata"));
-    const result = fetch("http://localhost:3002/add-product", {
+    const result = fetch("/add-product", {
       method: "post",
       body: JSON.stringify({ name, price, category, company }),
       headers: {

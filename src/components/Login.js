@@ -15,7 +15,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     // console.log("click");
-    let result = await fetch("http://localhost:3002/login", {
+    let result = await fetch("/login", {
       method: "post",
       body: JSON.stringify({ email, password }),
       headers: {

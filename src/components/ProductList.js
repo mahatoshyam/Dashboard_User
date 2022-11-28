@@ -8,7 +8,7 @@ export default function ProductList() {
   }, []);
 
   const getProducts = async () => {
-    const result = await fetch("http://localhost:3002/products", {
+    const result = await fetch("/products", {
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
@@ -18,7 +18,7 @@ export default function ProductList() {
     setProducts(data);
   };
   const deleteProducthandler = async (id) => {
-    let result = await fetch(`http://localhost:3002/products/${id}`, {
+    let result = await fetch(`/products/${id}`, {
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
@@ -32,7 +32,7 @@ export default function ProductList() {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let result = await fetch(`http://localhost:3002/search/${key}`, {
+      let result = await fetch(`/search/${key}`, {
         headers: {
           authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
